@@ -9,6 +9,16 @@ export default defineNuxtConfig({
           "global": true
       }
     ]
-  }
- 
+  },
+  "imports": {
+    "dirs": ['stores']
+ },
+ "modules": [
+  [
+      '@pinia/nuxt',
+      {
+          'autoImports': ['defineStore', 'acceptHMRUpdate'],
+      },
+  ]
+],
 })
