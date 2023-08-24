@@ -18,6 +18,9 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
-    "pinia": "^2.1.6"
+    "@popperjs/core": "^2.11.8",
+    "dayjs": "^1.11.9",
+    "pinia": "^2.1.6",
+    "v-calendar": "^3.0.3"
   }
 }
