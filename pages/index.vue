@@ -10,7 +10,12 @@ const selectedDate = ref(new Date());
 <template>
   首頁:{{ store.count }}
   {{ name }}
-  <h2>{{ $hello("Kitty") }}</h2>
+  <!-- <h2>{{ $hello("Kitty") }}</h2> -->
+  <!-- ClientOnly只在client端渲染 -->
+  <ClientOnly>
+    <h2>{{ $hello("Kitty") }}</h2>
+  </ClientOnly>
+
   <h3 v-timeformat="1692847439418"></h3>
   <Home></Home>
   <!-- 自動找資料夾裡的index.vue -->

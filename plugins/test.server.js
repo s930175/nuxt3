@@ -1,3 +1,3 @@
 export default defineNuxtPlugin((nuxtApp) => {
-  console.log("test mike");
+  console.log("test server");
 });
