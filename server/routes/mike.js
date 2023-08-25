@@ -1,9 +1,9 @@
-//資料夾一定要叫server/api
-// http://localhost:3000/api/hello
+//不用加上/api
+//http://localhost:3000/mike
 export default defineEventHandler((event) => {
   const data = {
     name: "mike",
-    age: 12,
+    age: 100,
   };
   return { data };
 });
