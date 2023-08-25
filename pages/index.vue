@@ -15,7 +15,8 @@ const selectedDate = ref(new Date());
   <ClientOnly>
     <h2>{{ $hello("Kitty") }}</h2>
   </ClientOnly>
-
+  <!-- 匿名middleware -->
+  <NuxtLink to="/user">user</NuxtLink>
   <h3 v-timeformat="1692847439418"></h3>
   <Home></Home>
   <!-- 自動找資料夾裡的index.vue -->
