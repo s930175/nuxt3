@@ -2,14 +2,6 @@
 // import AboutHeader from "@components/About/Header.vue";
 // import AboutFooter from "@components/About/Footer.vue";
 
-const res = await useFetch("https://vue-lessons-api.vercel.app/seo/about");
-useServerSeoMeta({
-  title: () => `${res.data.value.title} - Nuxt3`,
-  ogTitle: () => `${res.data.value.title} - Nuxt3`,
-  description: () => `${res.data.value.description} - Nuxt3`,
-  ogDescription: () => `${res.data.value.description} - Nuxt3`,
-});
-
 //局部SEO meta
 // useHead({
 //   title: "關於我們 About - Nuxt3 高效入門全攻略",
@@ -35,6 +27,32 @@ useServerSeoMeta({
 //   twitterSite: "",
 //   twitterCreator: "",
 // });
+
+const res = await useFetch("https://vue-lessons-api.vercel.app/seo/about");
+useServerSeoMeta({
+  title: () => `${res.data.value.title} - Nuxt3`,
+  ogTitle: () => `${res.data.value.title} - Nuxt3`,
+  description: () => `${res.data.value.description} - Nuxt3`,
+  ogDescription: () => `${res.data.value.description} - Nuxt3`,
+});
+
+useHead({
+  link: [
+    {
+      rel: "stylesheet",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+    },
+  ],
+  script: [
+    {
+      src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+      async: true,
+      // valid options are: 'head' | 'bodyClose' | 'bodyOpen'
+      // 選擇載入順序
+      tagPosition: "bodyClose",
+    },
+  ],
+});
 </script>
 <template>
   <AboutHeader></AboutHeader>
