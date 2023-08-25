@@ -1,6 +1,15 @@
 <script setup>
 // import AboutHeader from "@components/About/Header.vue";
 // import AboutFooter from "@components/About/Footer.vue";
+
+const res = await useFetch("https://vue-lessons-api.vercel.app/seo/about");
+useServerSeoMeta({
+  title: () => `${res.data.value.title} - Nuxt3`,
+  ogTitle: () => `${res.data.value.title} - Nuxt3`,
+  description: () => `${res.data.value.description} - Nuxt3`,
+  ogDescription: () => `${res.data.value.description} - Nuxt3`,
+});
+
 //局部SEO meta
 // useHead({
 //   title: "關於我們 About - Nuxt3 高效入門全攻略",
@@ -15,16 +24,17 @@
 //     },
 //   ],
 // });
-useSeoMeta({
-  title: "About - Nuxt3 高效入門全攻略",
-  description: "關於我們 - 最棒的Nuxt3的線上課程",
-  ogDescription: "關於我們 - 最棒的Nuxt3的線上課程",
-  ogTitle: "About - Nuxt3 高效入門全攻略",
-  ogImage: "",
-  twitterCard: "summary_large_image",
-  twitterSite: "",
-  twitterCreator: "",
-});
+
+// useSeoMeta({
+//   title: "About - Nuxt3 高效入門全攻略",
+//   description: "關於我們 - 最棒的Nuxt3的線上課程",
+//   ogDescription: "關於我們 - 最棒的Nuxt3的線上課程",
+//   ogTitle: "About - Nuxt3 高效入門全攻略",
+//   ogImage: "",
+//   twitterCard: "summary_large_image",
+//   twitterSite: "",
+//   twitterCreator: "",
+// });
 </script>
 <template>
   <AboutHeader></AboutHeader>
